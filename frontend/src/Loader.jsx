@@ -15,7 +15,7 @@ const Loader = () => {
     }, 1000); 
 
     return () => clearInterval(interval);
-  }, [words.length]);
+  }, []);
 
   const containerStyle = {
     position: 'fixed',
@@ -51,7 +51,28 @@ const Loader = () => {
     textShadow: '0 2px 10px rgba(0, 0, 0, 0.4)',
     textAlign: 'center'
   };
+  const [count, setCount] = useState(0)
 
+  useEffect(() => {
+    if (count < 100) {
+      const interval = setInterval(() => {
+        setCount(prev => {
+          if (prev < 100) {
+            return prev + 1
+          } else {
+            clearInterval(interval)
+            return prev
+          }
+        })
+      }, 38) // speed (30ms per increment = ~3 seconds)
+
+      return () => clearInterval(interval)
+    }
+
+  }, [])
+
+
+      const formattedCount = count.toString().padStart(3, '0');
 
 
   return (
@@ -70,7 +91,9 @@ const Loader = () => {
           </div>
         ))}
       </div>
-    
+    <div className="counter absolute bottom-[50px] left-[50px] bg-black text-white text-6xl font-bolder" style={{fontFamily:"orbitron"}}>
+      {formattedCount}
+    </div>
     </section>
   );
 };

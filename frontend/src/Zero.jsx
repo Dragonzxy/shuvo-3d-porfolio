@@ -10,7 +10,7 @@ const Zero = () => {
     scrollTrigger:{
       trigger:".zero",
       start:"top top",
-      end:"+=70%",
+      end:"+=50%",
       scrub:3,
       pin:true,
       pinSpacing:true,

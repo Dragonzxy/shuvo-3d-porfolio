@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
+import { toast } from "react-toastify";
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -55,12 +55,12 @@ return()=>{
       .then(
         (result) => {
           console.log("SUCCESS!", result.text);
-          alert("Message sent successfully!");
+        toast.success("Message sent successfully");
           formRef.current.reset();
         },
         (error) => {
           console.error("FAILED...", error);
-          alert("Failed to send message. Please try again.");
+          toast.error("error");
         }
       );
   };

@@ -8,6 +8,8 @@ import Zero from './Zero'
 import Hire from './Hire'
 import Footer from './Footer'
 import Loader from './Loader'
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 
 
@@ -31,6 +33,7 @@ const App = () => {
 <Footer /></>)   
 }
 
+      <ToastContainer position="top-right" autoClose={3000} />
 
       </>
 

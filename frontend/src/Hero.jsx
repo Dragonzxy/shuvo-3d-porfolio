@@ -62,7 +62,7 @@ scale:2
       </div>
 
         <h1 className="color-change" ref={textref} >make <span>it where it</span> mattters</h1>
-        <video id="video" src="/output.mp4" autoPlay loop muted></video>
+        <video id="video" src="/optimize.mp4" autoPlay playsInline preload="auto" loop muted></video>
     </section>
 
 
